@@ -11,9 +11,9 @@ $(document).ready(() => {
 
 function changeLink(redirect_setting) {
 	const {target_pid, replacement_link} = redirect_setting;
-	let custom_link_css = redirect_setting.custom_link_css ?? {};
+	let custom_link_css = redirect_setting.custom_link_css ?? "{}";
 	custom_link_css = JSON.parse(custom_link_css);
-	target_link = $(`a[href$='index.php?pid=${target_pid}']`);
+	let target_link = $(`a[href$='index.php?pid=${target_pid}']`);
 	const original_link = target_link.attr('href');
 
 	target_link.attr('href', replacement_link);
