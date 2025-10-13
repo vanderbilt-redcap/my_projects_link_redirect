@@ -10,7 +10,7 @@ class ExternalModule extends AbstractExternalModule
 
 	public function redcap_every_page_top($project_id): void {
 		// ensure user is on My Projects page
-		if (PAGE != "index.php") {
+		if (!str_ends_with(PAGE, "index.php")) {
 			return;
 		}
 		if ($_GET['action'] != "myprojects") {
