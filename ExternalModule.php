@@ -23,7 +23,7 @@ class ExternalModule extends AbstractExternalModule
 
 		$sys = $this->getSystemSettings(self::REDIRECT_KEY_NAME);
 		foreach ($sys["target_project"]["system_value"] as $redirect_idx => $pr_id) {
-			$active_for_users = $sys["user_list"]["system_value"][$redirect_idx];
+			$active_for_users = array_filter($sys["user_list"]["system_value"][$redirect_idx]);
 			if (!in_array($cur_user, $active_for_users) && !empty($active_for_users)) {
 				continue;
 			}
