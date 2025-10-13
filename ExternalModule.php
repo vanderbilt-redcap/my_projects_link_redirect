@@ -28,7 +28,7 @@ class ExternalModule extends AbstractExternalModule
 				continue;
 			}
 
-			$redirect_link = $sys["landing_page"]["system_value"][$redirect_idx];
+			$redirect_link = $sys["redirect_link"]["system_value"][$redirect_idx];
 			$custom_link_css = $sys["custom_link_css"]["system_value"][$redirect_idx];
 
 			$redirect_projects[] = [
